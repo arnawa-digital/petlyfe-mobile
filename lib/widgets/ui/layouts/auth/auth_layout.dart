@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:petlyfe_mobile/app/routes/app_pages.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_button.dart';
 import 'package:petlyfe_mobile/widgets/ui/or_divider.dart';
 
@@ -115,6 +117,9 @@ class AuthLayout extends StatelessWidget {
                       children: [
                         const Text("Don't have an aaccount?"),
                         GestureDetector(
+                          onTap: () {
+                            Get.toNamed(Routes.REGISTER);
+                          },
                           child: Text(" Sign Up",
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -128,6 +133,9 @@ class AuthLayout extends StatelessWidget {
                       children: [
                         const Text("Already have an account?"),
                         GestureDetector(
+                          onTap: () {
+                            Get.toNamed(Routes.LOGIN);
+                          },
                           child: Text(" Sign In",
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold,
