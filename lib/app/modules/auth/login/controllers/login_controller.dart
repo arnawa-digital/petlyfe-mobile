@@ -18,4 +18,8 @@ class LoginController extends GetxController {
   void rememberMe(bool? value) {
     isRememberMe.value = value!;
   }
+
+  void login() {
+    if (formLogin.currentState!.validate()) {}
+  }
 }
