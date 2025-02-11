@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:petlyfe_mobile/widgets/ui/custom_button.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_text_field.dart';
 import 'package:petlyfe_mobile/widgets/ui/layouts/auth/auth_layout.dart';
 import 'package:petlyfe_mobile/widgets/ui/or_divider.dart';
@@ -59,24 +61,20 @@ class LoginView extends GetView<LoginController> {
                         Text("Lupa Password?"),
                       ],
                     ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
-                        padding: EdgeInsets.symmetric(vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
+                    CustomButton(
+                      onPressed: () {
+                        // Action ketika tombol ditekan
+                      },
+                      backgroundColor: Colors.blue,
+                      child: const Text(
+                        "Masuk",
+                        style: TextStyle(
+                          fontSize: 17,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      child: Text("Masuk",
-                          style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          )),
                     ),
-                    SizedBox(height: 16),
-                    OrDivider(),
                     SizedBox(height: 16),
                   ],
                 ),
