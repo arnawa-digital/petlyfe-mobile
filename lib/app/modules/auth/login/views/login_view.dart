@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:petlyfe_mobile/utils/helpers/validators/auth_validator.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_button.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_text_field.dart';
 import 'package:petlyfe_mobile/widgets/ui/layouts/auth/auth_layout.dart';
-import 'package:petlyfe_mobile/widgets/ui/or_divider.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -28,6 +28,7 @@ class LoginView extends GetView<LoginController> {
                       controller: controller.emailLoginController,
                       hintText: "Masukkan email kamu",
                       prefixIcon: Icon(Icons.email),
+                      validator: AuthValidator.email,
                     ),
                     SizedBox(
                       height: 16,
@@ -41,6 +42,7 @@ class LoginView extends GetView<LoginController> {
                         obscureText: controller.isShowPassword.value,
                         prefixIcon: Icon(Icons.email),
                         onPressed: controller.showPassword,
+                        validator: AuthValidator.password,
                       ),
                     ),
                     Row(
@@ -70,8 +72,6 @@ class LoginView extends GetView<LoginController> {
                             fontWeight: FontWeight.bold,
                           )),
                     ),
-                    SizedBox(height: 16),
-                    OrDivider(),
                     SizedBox(height: 16),
                   ],
                 ),

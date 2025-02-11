@@ -6,6 +6,7 @@ class CustomButton extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry padding;
   final double borderRadius;
+  final Color borderColor;
 
   const CustomButton({
     super.key,
@@ -14,6 +15,7 @@ class CustomButton extends StatelessWidget {
     required this.child,
     this.padding = const EdgeInsets.symmetric(vertical: 16),
     this.borderRadius = 30.0,
+    this.borderColor = Colors.white,
   });
 
   @override
@@ -24,6 +26,7 @@ class CustomButton extends StatelessWidget {
         backgroundColor: backgroundColor,
         padding: padding,
         shape: RoundedRectangleBorder(
+          side: BorderSide(color: borderColor),
           borderRadius: BorderRadius.circular(borderRadius),
         ),
       ),

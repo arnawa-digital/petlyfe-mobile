@@ -20,6 +20,8 @@ class LoginController extends GetxController {
   }
 
   void login() {
-    if (formLogin.currentState!.validate()) {}
+    if (formLogin.currentState!.validate()) {
+      print("coba");
+    }
   }
 }
