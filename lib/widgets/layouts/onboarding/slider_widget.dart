@@ -52,12 +52,12 @@ class SliderWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 16,
+                  height: 50,
                 ),
                 ImageContainer(
                   imageUrl: onboard[index].image,
                   height:
-                      height / 1.78, // Gambar mengambil 40% dari tinggi layar
+                      height / 1.9, // Gambar mengambil 40% dari tinggi layar
                   width: width,
                 ),
               ],
