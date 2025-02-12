@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:petlyfe_mobile/utils/helpers/validators/auth_validator.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_button.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_text_field.dart';
-import 'package:petlyfe_mobile/widgets/ui/layouts/auth/auth_layout.dart';
+import 'package:petlyfe_mobile/widgets/layouts/auth/auth_layout.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
