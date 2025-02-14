@@ -1,9 +1,15 @@
 import 'package:get/get.dart';
+import 'package:petlyfe_mobile/app/modules/forgot_password/forgot_password_otp/bindings/forgot_password_otp_binding.dart';
+import 'package:petlyfe_mobile/app/modules/forgot_password/forgot_password_otp/views/forgot_password_otp_view.dart';
+import 'package:petlyfe_mobile/app/modules/forgot_password/new_password/bindings/new_password_binding.dart';
+import 'package:petlyfe_mobile/app/modules/forgot_password/new_password/views/new_password_view.dart';
 
 import '../modules/auth/login/bindings/login_binding.dart';
 import '../modules/auth/login/views/login_view.dart';
 import '../modules/auth/register/bindings/register_binding.dart';
 import '../modules/auth/register/views/register_view.dart';
+import '../modules/forgot_password/forgot_password_email/bindings/forgot_password_email_binding.dart';
+import '../modules/forgot_password/forgot_password_email/views/forgot_password_email_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
@@ -36,6 +42,21 @@ class AppPages {
       name: _Paths.ONBOARDING,
       page: () => const OnboardingView(),
       binding: OnboardingBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORGOT_PASSWORD_EMAIL,
+      page: () => const ForgotPasswordEmailView(),
+      binding: ForgotPasswordEmailBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORGOT_PASSWORD_OTP,
+      page: () => const ForgotPasswordOtpView(),
+      binding: ForgotPasswordOtpBinding(),
+    ),
+    GetPage(
+      name: _Paths.NEW_PASSWORD,
+      page: () => const NewPasswordView(),
+      binding: NewPasswordBinding(),
     ),
   ];
 }
