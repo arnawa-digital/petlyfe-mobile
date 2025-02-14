@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:petlyfe_mobile/app/routes/app_pages.dart';
 import 'package:petlyfe_mobile/utils/helpers/validators/auth_validator.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_button.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_text_field.dart';
@@ -59,7 +60,17 @@ class LoginView extends GetView<LoginController> {
                                 style: TextStyle(fontWeight: FontWeight.bold)),
                           ],
                         ),
-                        Text("Lupa Password?"),
+                        GestureDetector(
+                          onTap: () {
+                            Get.toNamed(Routes.FORGOT_PASSWORD_EMAIL);
+                          },
+                          child: Text(
+                            "Lupa Password?",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     CustomButton(

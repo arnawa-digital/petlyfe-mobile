@@ -21,4 +21,29 @@ class AuthValidator {
     }
     return null;
   }
+
+  // Validasi untuk OTP
+  static String? otp(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Kode OTP tidak boleh kosong';
+    }
+
+    final otpRegex =
+        RegExp(r'^\d{4,6}$'); // OTP harus terdiri dari 4-6 digit angka
+    if (!otpRegex.hasMatch(value)) {
+      return 'Kode OTP harus terdiri dari 4-6 digit angka';
+    }
+    return null;
+  }
+
+  // Validasi untuk Confirm Password
+  static String? validateConfirmPassword(String? value, String password) {
+    if (value == null || value.isEmpty) {
+      return 'Please confirm your password';
+    }
+    if (value != password) {
+      return 'Passwords do not match';
+    }
+    return null;
+  }
 }
