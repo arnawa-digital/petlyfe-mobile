@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:petlyfe_mobile/app/models/onboard.dart';
 import 'package:petlyfe_mobile/app/routes/app_pages.dart';
+import 'package:petlyfe_mobile/utils/storage_service.dart';
 
 class OnboardingController extends GetxController {
   //TODO: Implement OnboardingController
@@ -32,6 +33,7 @@ class OnboardingController extends GetxController {
 
   void nextPage() {
     if (pageIndex.value == data.length - 1) {
+      StorageService.saveToken('isFirstTime', 'false');
       Get.offNamed(Routes.LOGIN);
     } else {
       pageController.nextPage(
