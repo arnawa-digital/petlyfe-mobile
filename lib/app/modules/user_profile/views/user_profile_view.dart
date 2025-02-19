@@ -21,15 +21,11 @@ class UserProfileView extends GetView<UserProfileController> {
           expandedHeight: 220,
           actions: [
             CircularButton(
-              onPressed: () {
-                // Aksi ketika tombol ditekan
-              },
-              radius:
-                  50, // Jari-jari tombol (default sudah berbentuk lingkaran)
-              backgroundColor:
-                  Colors.black.withOpacity(0.5), // Warna latar belakang tombol
-              borderColor: Colors.transparent, // Warna border
-              borderWidth: 2, // Ketebalan border
+              onPressed: () {},
+              radius: 50,
+              backgroundColor: Colors.black.withOpacity(0.5),
+              borderColor: Colors.transparent,
+              borderWidth: 2,
               padding: 12,
               child: SvgPicture.asset(
                 "assets/icons/svg/pencil.svg",
@@ -217,7 +213,7 @@ class UserProfileView extends GetView<UserProfileController> {
                   height: 16,
                 ),
                 CustomButton(
-                    onPressed: () {},
+                    onPressed: controller.logout,
                     backgroundColor: Colors.red,
                     child: Text("Keluar Akun",
                         style: TextStyle(color: Colors.white)))

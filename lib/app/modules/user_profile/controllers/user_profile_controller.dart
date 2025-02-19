@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:petlyfe_mobile/app/routes/app_pages.dart';
+import 'package:petlyfe_mobile/utils/storage_service.dart';
 
 class UserProfileController extends GetxController {
   //TODO: Implement UserProfileController
@@ -48,4 +50,9 @@ class UserProfileController extends GetxController {
 
     // Tambahkan pengaturan lainnya di sini
   ];
+
+  void logout() {
+    StorageService.clearToken("auth_token");
+    Get.offAllNamed(Routes.LOGIN);
+  }
 }
