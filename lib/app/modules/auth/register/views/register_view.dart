@@ -14,100 +14,100 @@ class RegisterView extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: AuthLayout(
-              isLogin: false,
-              bannerImagePath: 'assets/images/register banner.png',
-              iconPath: 'assets/icons/svg/register icon.svg',
-              welcomeText: 'Selamat Datang',
-              descriptionText:
-                  "Daftar sekarang dan nikmati layanan yang kami tawarkan pada aplikasi kami.",
-              child: Form(
-                key: controller.formRegister,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: AuthLayout(
+          isLogin: false,
+          showBackButton: true,
+          bannerImagePath: 'assets/images/register banner.png',
+          iconPath: 'assets/icons/svg/register icon.svg',
+          title: 'Selamat Datang',
+          description:
+              "Daftar sekarang dan nikmati layanan yang kami tawarkan pada aplikasi kami.",
+          child: Form(
+            key: controller.formRegister,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                CustomTextField(
+                  label: "Email",
+                  controller: controller.emailRegisterController,
+                  hintText: "Masukkan email kamu",
+                  prefixIcon: Icon(Icons.email),
+                  validator: AuthValidator.email,
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                Obx(
+                  () => CustomTextField(
+                    label: "Password",
+                    controller: controller.passwordRegisterController,
+                    hintText: "Password",
+                    isPassword: true,
+                    obscureText: controller.isShowPassword.value,
+                    prefixIcon: Icon(Icons.email),
+                    onPressed: controller.showPassword,
+                    validator: AuthValidator.password,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CustomTextField(
-                      label: "Email",
-                      controller: controller.emailRegisterController,
-                      hintText: "Masukkan email kamu",
-                      prefixIcon: Icon(Icons.email),
-                      validator: AuthValidator.email,
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Obx(
-                      () => CustomTextField(
-                        label: "Password",
-                        controller: controller.passwordRegisterController,
-                        hintText: "Password",
-                        isPassword: true,
-                        obscureText: controller.isShowPassword.value,
-                        prefixIcon: Icon(Icons.email),
-                        onPressed: controller.showPassword,
-                        validator: AuthValidator.password,
+                    Obx(() {
+                      return Checkbox(
+                        value: controller.isAgree.value,
+                        onChanged: controller.agree,
+                      );
+                    }),
+                    Expanded(
+                      child: RichText(
+                        text: TextSpan(
+                          text:
+                              "When you’re signing to this apps you’re agreeing to our apps ",
+                          style: const TextStyle(
+                            color: Colors.black,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: "Privacy Policy",
+                              style: const TextStyle(color: Colors.blue),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  // Navigasi ke halaman Privacy Policy
+                                },
+                            ),
+                            const TextSpan(text: " and "),
+                            TextSpan(
+                              text: "Terms & Condition",
+                              style: const TextStyle(color: Colors.blue),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  // Navigasi ke halaman Terms & Condition
+                                },
+                            ),
+                            const TextSpan(text: "."),
+                          ],
+                        ),
                       ),
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Obx(() {
-                          return Checkbox(
-                            value: controller.isAgree.value,
-                            onChanged: controller.agree,
-                          );
-                        }),
-                        Expanded(
-                          child: RichText(
-                            text: TextSpan(
-                              text:
-                                  "When you’re signing to this apps you’re agreeing to our apps ",
-                              style: const TextStyle(
-                                color: Colors.black,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: "Privacy Policy",
-                                  style: const TextStyle(color: Colors.blue),
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = () {
-                                      // Navigasi ke halaman Privacy Policy
-                                    },
-                                ),
-                                const TextSpan(text: " and "),
-                                TextSpan(
-                                  text: "Terms & Condition",
-                                  style: const TextStyle(color: Colors.blue),
-                                  recognizer: TapGestureRecognizer()
-                                    ..onTap = () {
-                                      // Navigasi ke halaman Terms & Condition
-                                    },
-                                ),
-                                const TextSpan(text: "."),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    CustomButton(
-                      onPressed: controller.register,
-                      backgroundColor: Colors.blue,
-                      child: Text("Daftar Sekarang",
-                          style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          )),
-                    ),
-                    SizedBox(height: 16),
                   ],
                 ),
-              ))),
+                CustomButton(
+                  onPressed: controller.register,
+                  backgroundColor: Colors.blue,
+                  child: Text("Daftar Sekarang",
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      )),
+                ),
+                SizedBox(height: 16),
+              ],
+            ),
+          )),
     );
   }
 }

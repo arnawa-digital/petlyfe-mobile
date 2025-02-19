@@ -12,81 +12,81 @@ class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-          child: AuthLayout(
-              bannerImagePath: 'assets/images/login banner.png',
-              iconPath: 'assets/icons/svg/login icon.svg',
-              welcomeText: 'Selamat Datang Kembali',
-              descriptionText:
-                  "Daftar sekarang dan nikmati layanan yang kami tawarkan pada aplikasi kami.",
-              child: Form(
-                key: controller.formLogin,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: AuthLayout(
+          bannerImagePath: 'assets/images/login banner.png',
+          iconPath: 'assets/icons/svg/login icon.svg',
+          title: 'Selamat Datang Kembali',
+          description:
+              "Daftar sekarang dan nikmati layanan yang kami tawarkan pada aplikasi kami.",
+          isLogin: true,
+          child: Form(
+            key: controller.formLogin,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                CustomTextField(
+                  label: "Email",
+                  controller: controller.emailLoginController,
+                  hintText: "Masukkan email kamu",
+                  prefixIcon: Icon(Icons.email),
+                  validator: AuthValidator.email,
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                Obx(
+                  () => CustomTextField(
+                    label: "Password",
+                    controller: controller.passwordLoginController,
+                    hintText: "Password",
+                    isPassword: true,
+                    obscureText: controller.isShowPassword.value,
+                    prefixIcon: Icon(Icons.email),
+                    onPressed: controller.showPassword,
+                    validator: AuthValidator.password,
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomTextField(
-                      label: "Email",
-                      controller: controller.emailLoginController,
-                      hintText: "Masukkan email kamu",
-                      prefixIcon: Icon(Icons.email),
-                      validator: AuthValidator.email,
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Obx(
-                      () => CustomTextField(
-                        label: "Password",
-                        controller: controller.passwordLoginController,
-                        hintText: "Password",
-                        isPassword: true,
-                        obscureText: controller.isShowPassword.value,
-                        prefixIcon: Icon(Icons.email),
-                        onPressed: controller.showPassword,
-                        validator: AuthValidator.password,
-                      ),
-                    ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            Obx(() {
-                              return Checkbox(
-                                  value: controller.isRememberMe.value,
-                                  onChanged: controller.rememberMe);
-                            }),
-                            Text("Remember Me",
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                          ],
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Get.toNamed(Routes.FORGOT_PASSWORD_EMAIL);
-                          },
-                          child: Text(
-                            "Lupa Password?",
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                        ),
+                        Obx(() {
+                          return Checkbox(
+                              value: controller.isRememberMe.value,
+                              onChanged: controller.rememberMe);
+                        }),
+                        Text("Remember Me",
+                            style: TextStyle(fontWeight: FontWeight.bold)),
                       ],
                     ),
-                    CustomButton(
-                      onPressed: controller.login,
-                      backgroundColor: Colors.blue,
-                      child: Text("Masuk",
-                          style: TextStyle(
-                            fontSize: 17,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          )),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(Routes.FORGOT_PASSWORD_EMAIL);
+                      },
+                      child: Text(
+                        "Lupa Password?",
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
                     ),
-                    SizedBox(height: 16),
                   ],
                 ),
-              ))),
+                CustomButton(
+                  onPressed: controller.login,
+                  backgroundColor: Colors.blue,
+                  child: Text("Masuk",
+                      style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      )),
+                ),
+                SizedBox(height: 16),
+              ],
+            ),
+          )),
     );
   }
 }
