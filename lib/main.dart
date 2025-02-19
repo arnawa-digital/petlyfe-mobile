@@ -36,7 +36,7 @@ Future<String> checkInitialRoute() async {
 
   if (isFirstTime != null) {
     if (token != null) {
-      return Routes.HOME;
+      return Routes.USER_PROFILE;
     }
     return Routes.LOGIN;
   }

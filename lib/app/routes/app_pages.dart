@@ -1,26 +1,28 @@
 import 'package:get/get.dart';
-import 'package:petlyfe_mobile/app/modules/auth/forgot_password/forgot_password_otp/bindings/forgot_password_otp_binding.dart';
-import 'package:petlyfe_mobile/app/modules/auth/forgot_password/forgot_password_otp/views/forgot_password_otp_view.dart';
-import 'package:petlyfe_mobile/app/modules/auth/forgot_password/new_password/bindings/new_password_binding.dart';
-import 'package:petlyfe_mobile/app/modules/auth/forgot_password/new_password/views/new_password_view.dart';
 
+import '../modules/auth/forgot_password/forgot_password_email/bindings/forgot_password_email_binding.dart';
+import '../modules/auth/forgot_password/forgot_password_email/views/forgot_password_email_view.dart';
+import '../modules/auth/forgot_password/forgot_password_otp/bindings/forgot_password_otp_binding.dart';
+import '../modules/auth/forgot_password/forgot_password_otp/views/forgot_password_otp_view.dart';
+import '../modules/auth/forgot_password/new_password/bindings/new_password_binding.dart';
+import '../modules/auth/forgot_password/new_password/views/new_password_view.dart';
 import '../modules/auth/login/bindings/login_binding.dart';
 import '../modules/auth/login/views/login_view.dart';
 import '../modules/auth/register/bindings/register_binding.dart';
 import '../modules/auth/register/views/register_view.dart';
-import '../modules/auth/forgot_password/forgot_password_email/bindings/forgot_password_email_binding.dart';
-import '../modules/auth/forgot_password/forgot_password_email/views/forgot_password_email_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
+import '../modules/user_profile/bindings/user_profile_binding.dart';
+import '../modules/user_profile/views/user_profile_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.ONBOARDING;
+  static const INITIAL = Routes.USER_PROFILE;
 
   static final routes = [
     GetPage(
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.NEW_PASSWORD,
       page: () => const NewPasswordView(),
       binding: NewPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.USER_PROFILE,
+      page: () => const UserProfileView(),
+      binding: UserProfileBinding(),
     ),
   ];
 }
