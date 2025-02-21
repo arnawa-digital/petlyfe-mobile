@@ -8,6 +8,7 @@ class CustomButton extends StatelessWidget {
   final double borderRadius;
   final Color borderColor;
   final double? width;
+  final bool disableClickEffect;
 
   const CustomButton({
     super.key,
@@ -18,6 +19,7 @@ class CustomButton extends StatelessWidget {
     this.borderRadius = 30.0,
     this.borderColor = Colors.white,
     this.width,
+    this.disableClickEffect = false,
   });
 
   @override
@@ -33,6 +35,17 @@ class CustomButton extends StatelessWidget {
             side: BorderSide(color: borderColor),
             borderRadius: BorderRadius.circular(borderRadius),
           ),
+          elevation: 0, // Hilangkan shadow default
+          shadowColor: Colors.transparent, // Hilangkan shadow saat ditekan
+        ).copyWith(
+          overlayColor: disableClickEffect
+              ? WidgetStateProperty.all(Colors.transparent)
+              : null, // Hilangkan efek klik
+          splashFactory: disableClickEffect
+              ? NoSplash.splashFactory
+              : null, // Hilangkan splash
+          elevation:
+              WidgetStateProperty.all(0), // Hilangkan shadow di semua state
         ),
         child: child,
       ),
