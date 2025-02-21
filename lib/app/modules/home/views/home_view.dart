@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:petlyfe_mobile/widgets/layouts/home/progress_card.dart';
 import 'package:petlyfe_mobile/widgets/layouts/home/header_home.dart';
 import 'package:petlyfe_mobile/widgets/layouts/home/pet_card.dart';

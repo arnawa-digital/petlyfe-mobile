@@ -14,6 +14,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
+import '../modules/pet_profile/bindings/pet_profile_binding.dart';
+import '../modules/pet_profile/views/pet_profile_view.dart';
 import '../modules/user_profile/bindings/user_profile_binding.dart';
 import '../modules/user_profile/views/user_profile_view.dart';
 
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.USER_PROFILE,
       page: () => const UserProfileView(),
       binding: UserProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.PET_PROFILE,
+      page: () => const PetProfileView(),
+      binding: PetProfileBinding(),
     ),
   ];
 }
