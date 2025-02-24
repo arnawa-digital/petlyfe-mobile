@@ -40,7 +40,7 @@ class RegisterController extends GetxController {
           email: emailRegisterController.text,
           password: passwordRegisterController.text,
         );
-        Get.offAllNamed(Routes.HOME);
+        Get.offAllNamed(Routes.LANDING);
         ToastHelper.show(
             backgroundColor: Colors.green,
             message: "Registrasi Berhasil",

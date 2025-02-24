@@ -10,13 +10,12 @@ import '../modules/auth/login/bindings/login_binding.dart';
 import '../modules/auth/login/views/login_view.dart';
 import '../modules/auth/register/bindings/register_binding.dart';
 import '../modules/auth/register/views/register_view.dart';
-import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/landing/bindings/landing_binding.dart';
+import '../modules/landing/views/landing_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
-import '../modules/pet_profile/bindings/pet_profile_binding.dart';
 import '../modules/pet_profile/views/pet_profile_view.dart';
-import '../modules/user_profile/bindings/user_profile_binding.dart';
 import '../modules/user_profile/views/user_profile_view.dart';
 
 part 'app_routes.dart';
@@ -30,7 +29,6 @@ class AppPages {
     GetPage(
       name: _Paths.HOME,
       page: () => const HomeView(),
-      binding: HomeBinding(),
     ),
     GetPage(
       name: _Paths.LOGIN,
@@ -65,12 +63,15 @@ class AppPages {
     GetPage(
       name: _Paths.USER_PROFILE,
       page: () => const UserProfileView(),
-      binding: UserProfileBinding(),
     ),
     GetPage(
       name: _Paths.PET_PROFILE,
       page: () => const PetProfileView(),
-      binding: PetProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.LANDING,
+      page: () => const LandingView(),
+      binding: LandingBinding(),
     ),
   ];
 }

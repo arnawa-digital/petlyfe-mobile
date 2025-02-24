@@ -38,7 +38,7 @@ class LoginController extends GetxController {
             message: "Login Berhasil",
             fontSize: 16.0,
             textColor: Colors.white);
-        Get.offAllNamed(Routes.HOME);
+        Get.offAllNamed(Routes.LANDING);
       } catch (e) {
         ToastHelper.show(
             message: e.toString(),
