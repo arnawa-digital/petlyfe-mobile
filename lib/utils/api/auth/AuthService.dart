@@ -95,6 +95,7 @@ class AuthService {
   // }
   Future<void> logout() async {
     try {
+      await HttpService.postRequest('/auth/sign-out');
       await StorageService.clearToken('auth_token');
     } catch (e) {
       rethrow;

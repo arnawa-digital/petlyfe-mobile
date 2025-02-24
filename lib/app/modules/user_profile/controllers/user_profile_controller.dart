@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:petlyfe_mobile/app/routes/app_pages.dart';
+import 'package:petlyfe_mobile/utils/helpers/toast_helper.dart';
 import 'package:petlyfe_mobile/utils/storage_service.dart';
 
 class UserProfileController extends GetxController {
@@ -53,6 +55,11 @@ class UserProfileController extends GetxController {
 
   void logout() {
     StorageService.clearToken("auth_token");
+    ToastHelper.show(
+        backgroundColor: Colors.green,
+        message: "Logout Berhasil",
+        fontSize: 16.0,
+        textColor: Colors.white);
     Get.offAllNamed(Routes.LOGIN);
   }
 }
