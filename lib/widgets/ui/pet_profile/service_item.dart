@@ -8,12 +8,12 @@ class ServiceItem extends StatelessWidget {
   final Color textColor;
 
   const ServiceItem({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.label,
     required this.borderColor,
     required this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
