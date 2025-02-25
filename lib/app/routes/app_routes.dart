@@ -14,6 +14,11 @@ abstract class Routes {
   static const USER_PROFILE = _Paths.USER_PROFILE;
   static const PET_PROFILE = _Paths.PET_PROFILE;
   static const LANDING = _Paths.LANDING;
+  static const CARE = _Paths.CARE;
+  static const DONATION = _Paths.DONATION;
+  static const ADOPTION = _Paths.ADOPTION;
+  static const LOST = _Paths.LOST;
+  static const TRACKING = _Paths.TRACKING;
 }
 
 abstract class _Paths {
@@ -28,4 +33,9 @@ abstract class _Paths {
   static const USER_PROFILE = '/user-profile';
   static const PET_PROFILE = '/pet-profile';
   static const LANDING = '/landing';
+  static const CARE = '/care';
+  static const DONATION = '/donation';
+  static const ADOPTION = '/adoption';
+  static const LOST = '/lost';
+  static const TRACKING = '/tracking';
 }
