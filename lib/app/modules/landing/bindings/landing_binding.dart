@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:petlyfe_mobile/app/modules/care/controllers/care_controller.dart';
+import 'package:petlyfe_mobile/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:petlyfe_mobile/app/modules/home/controllers/home_controller.dart';
 import 'package:petlyfe_mobile/app/modules/pet_profile/controllers/pet_profile_controller.dart';
 import 'package:petlyfe_mobile/app/modules/user_profile/controllers/user_profile_controller.dart';
@@ -16,5 +17,6 @@ class LandingBinding extends Bindings {
     Get.put(PetProfileController());
     Get.put(UserProfileController());
     Get.put(CareController());
+    Get.put(DashboardController());
   }
 }

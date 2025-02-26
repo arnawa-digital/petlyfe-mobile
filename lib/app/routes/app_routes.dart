@@ -19,6 +19,11 @@ abstract class Routes {
   static const ADOPTION = _Paths.ADOPTION;
   static const LOST = _Paths.LOST;
   static const TRACKING = _Paths.TRACKING;
+  static const DASHBOARD = _Paths.DASHBOARD;
+  static const DOCTOR_CLINIC = _Paths.DOCTOR_CLINIC;
+  static const SHELTER = _Paths.SHELTER;
+  static const NEWS_INSIGHTS = _Paths.NEWS_INSIGHTS;
+  static const ONLINE_STORE = _Paths.ONLINE_STORE;
 }
 
 abstract class _Paths {
@@ -38,4 +43,9 @@ abstract class _Paths {
   static const ADOPTION = '/adoption';
   static const LOST = '/lost';
   static const TRACKING = '/tracking';
+  static const DASHBOARD = '/dashboard';
+  static const DOCTOR_CLINIC = '/doctor-clinic';
+  static const SHELTER = '/shelter';
+  static const NEWS_INSIGHTS = '/news-insights';
+  static const ONLINE_STORE = '/online-store';
 }

@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:petlyfe_mobile/app/modules/care/views/care_view.dart';
+import 'package:petlyfe_mobile/app/modules/dashboard/views/dashboard_view.dart';
 import 'package:petlyfe_mobile/app/modules/home/views/home_view.dart';
 import 'package:petlyfe_mobile/app/modules/pet_profile/views/pet_profile_view.dart';
 import 'package:petlyfe_mobile/app/modules/user_profile/views/user_profile_view.dart';
@@ -60,9 +61,7 @@ class LandingView extends GetView<LandingController> {
             ),
           ),
           PersistentTabConfig(
-            screen: Center(
-              child: Text("More"),
-            ),
+            screen: DashboardView(),
             item: ItemConfig(
               icon: SvgPicture.asset(
                 "assets/icons/svg/more.svg",
