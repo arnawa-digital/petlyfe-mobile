@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:petlyfe_mobile/app/models/user.dart';
 import 'package:petlyfe_mobile/utils/api/http_service.dart';
 import 'package:petlyfe_mobile/utils/storage_service.dart';
 
@@ -74,25 +75,22 @@ class AuthService {
     }
   }
 
-  // Future<User> getProfile() async {
-  //   try {
-  //     final response =
-  //         await HttpService.getRequest('/users/profile', includeBearer: true);
-  //     var data = json.decode(response.body);
+  Future<User> getProfile() async {
+    try {
+      final response = await HttpService.getRequest('/auth/get-session',
+          includeBearer: true);
+      var data = json.decode(response.body);
 
-  //     if (response.statusCode == 200) {
-  //       if (data['success'] == false) {
-  //         throw Exception('Pengguna tidak disetujui: ${data['message']}');
-  //       }
+      if (response.statusCode == 200) {
+        return User.fromJson(data['user']);
+      } else {
+        throw data['message'];
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
 
-  //       return User.fromJson(data['data']);
-  //     } else {
-  //       throw data['message'];
-  //     }
-  //   } catch (e) {
-  //     rethrow;
-  //   }
-  // }
   Future<void> logout() async {
     try {
       await HttpService.postRequest('/auth/sign-out');
