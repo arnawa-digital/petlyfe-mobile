@@ -1,23 +1,23 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AdoptionController extends GetxController {
-  //TODO: Implement AdoptionController
+  final kucing = false.obs;
+  final anjing = false.obs;
+  final jantan = false.obs;
+  final betina = false.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  final domestik = false.obs;
+  final britishShorthair = false.obs;
+  final scottishFold = false.obs;
+  final anggora = false.obs;
+  final persian = false.obs;
+  final ragdoll = false.obs;
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  final warnaSatu = false.obs;
+  final warnaDua = false.obs;
+  final warnaTiga = false.obs;
+  final warnaLebihTiga = false.obs;
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+  var currentRangePriceValues = const RangeValues(40, 80).obs;
 }

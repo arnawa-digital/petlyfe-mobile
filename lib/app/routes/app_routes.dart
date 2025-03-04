@@ -24,6 +24,7 @@ abstract class Routes {
   static const SHELTER = _Paths.SHELTER;
   static const NEWS_INSIGHTS = _Paths.NEWS_INSIGHTS;
   static const ONLINE_STORE = _Paths.ONLINE_STORE;
+  static const ADOPTION_DETAIL = _Paths.ADOPTION_DETAIL;
 }
 
 abstract class _Paths {
@@ -48,4 +49,5 @@ abstract class _Paths {
   static const SHELTER = '/shelter';
   static const NEWS_INSIGHTS = '/news-insights';
   static const ONLINE_STORE = '/online-store';
+  static const ADOPTION_DETAIL = '/adoption-detail';
 }

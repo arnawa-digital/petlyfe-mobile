@@ -1,11 +1,7 @@
 import 'package:get/get.dart';
-import 'package:petlyfe_mobile/app/modules/dashboard/news_insights/bindings/news_insights_binding.dart';
-import 'package:petlyfe_mobile/app/modules/dashboard/news_insights/views/news_insights_view.dart';
-import 'package:petlyfe_mobile/app/modules/dashboard/online_store/bindings/online_store_binding.dart';
-import 'package:petlyfe_mobile/app/modules/dashboard/online_store/views/online_store_view.dart';
-import 'package:petlyfe_mobile/app/modules/dashboard/shelter/bindings/shelter_binding.dart';
-import 'package:petlyfe_mobile/app/modules/dashboard/shelter/views/shelter_view.dart';
 
+import '../modules/care/adoption/adoption_detail/bindings/adoption_detail_binding.dart';
+import '../modules/care/adoption/adoption_detail/views/adoption_detail_view.dart';
 import '../modules/auth/forgot_password/forgot_password_email/bindings/forgot_password_email_binding.dart';
 import '../modules/auth/forgot_password/forgot_password_email/views/forgot_password_email_view.dart';
 import '../modules/auth/forgot_password/forgot_password_otp/bindings/forgot_password_otp_binding.dart';
@@ -21,9 +17,15 @@ import '../modules/care/adoption/views/adoption_view.dart';
 import '../modules/care/donation/bindings/donation_binding.dart';
 import '../modules/care/donation/views/donation_view.dart';
 import '../modules/care/views/care_view.dart';
-import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/dashboard/doctor_clinic/bindings/doctor_clinic_binding.dart';
 import '../modules/dashboard/doctor_clinic/views/doctor_clinic_view.dart';
+import '../modules/dashboard/news_insights/bindings/news_insights_binding.dart';
+import '../modules/dashboard/news_insights/views/news_insights_view.dart';
+import '../modules/dashboard/online_store/bindings/online_store_binding.dart';
+import '../modules/dashboard/online_store/views/online_store_view.dart';
+import '../modules/dashboard/shelter/bindings/shelter_binding.dart';
+import '../modules/dashboard/shelter/views/shelter_view.dart';
+import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/landing/bindings/landing_binding.dart';
 import '../modules/landing/views/landing_view.dart';
@@ -124,6 +126,11 @@ class AppPages {
       name: _Paths.ONLINE_STORE,
       page: () => const OnlineStoreView(),
       binding: OnlineStoreBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADOPTION_DETAIL,
+      page: () => const AdoptionDetailView(),
+      binding: AdoptionDetailBinding(),
     ),
   ];
 }

@@ -7,6 +7,8 @@ class InfoRow extends StatelessWidget {
   final String label;
   final String value;
   final Color buttonColor;
+  final Color labelColor;
+  final Color valueColor;
 
   const InfoRow({
     super.key,
@@ -14,6 +16,8 @@ class InfoRow extends StatelessWidget {
     required this.label,
     required this.value,
     this.buttonColor = const Color(0xffFFF0F5),
+    this.labelColor = Colors.black,
+    this.valueColor = Colors.black,
   });
 
   @override
@@ -39,11 +43,12 @@ class InfoRow extends StatelessWidget {
           children: [
             Text(
               label,
-              style: TextStyle(fontSize: 10),
+              style: TextStyle(fontSize: 10, color: labelColor),
             ),
             Text(
               value,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 10, color: valueColor),
             ),
           ],
         )
