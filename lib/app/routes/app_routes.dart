@@ -25,6 +25,7 @@ abstract class Routes {
   static const NEWS_INSIGHTS = _Paths.NEWS_INSIGHTS;
   static const ONLINE_STORE = _Paths.ONLINE_STORE;
   static const ADOPTION_DETAIL = _Paths.ADOPTION_DETAIL;
+  static const ADOPTION_HISTORY = _Paths.ADOPTION_HISTORY;
 }
 
 abstract class _Paths {
@@ -50,4 +51,5 @@ abstract class _Paths {
   static const NEWS_INSIGHTS = '/news-insights';
   static const ONLINE_STORE = '/online-store';
   static const ADOPTION_DETAIL = '/adoption-detail';
+  static const ADOPTION_HISTORY = '/adoption-history';
 }

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import '../modules/care/adoption/adoption_detail/bindings/adoption_detail_binding.dart';
-import '../modules/care/adoption/adoption_detail/views/adoption_detail_view.dart';
+import '../modules/care/adoption/adoption_history/bindings/adoption_history_binding.dart';
+import '../modules/care/adoption/adoption_history/views/adoption_history_view.dart';
 import '../modules/auth/forgot_password/forgot_password_email/bindings/forgot_password_email_binding.dart';
 import '../modules/auth/forgot_password/forgot_password_email/views/forgot_password_email_view.dart';
 import '../modules/auth/forgot_password/forgot_password_otp/bindings/forgot_password_otp_binding.dart';
@@ -12,6 +12,8 @@ import '../modules/auth/login/bindings/login_binding.dart';
 import '../modules/auth/login/views/login_view.dart';
 import '../modules/auth/register/bindings/register_binding.dart';
 import '../modules/auth/register/views/register_view.dart';
+import '../modules/care/adoption/adoption_detail/bindings/adoption_detail_binding.dart';
+import '../modules/care/adoption/adoption_detail/views/adoption_detail_view.dart';
 import '../modules/care/adoption/bindings/adoption_binding.dart';
 import '../modules/care/adoption/views/adoption_view.dart';
 import '../modules/care/donation/bindings/donation_binding.dart';
@@ -131,6 +133,11 @@ class AppPages {
       name: _Paths.ADOPTION_DETAIL,
       page: () => const AdoptionDetailView(),
       binding: AdoptionDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADOPTION_HISTORY,
+      page: () => const AdoptionHistoryView(),
+      binding: AdoptionHistoryBinding(),
     ),
   ];
 }

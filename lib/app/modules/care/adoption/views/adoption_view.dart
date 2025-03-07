@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:petlyfe_mobile/app/routes/app_pages.dart';
 import 'package:petlyfe_mobile/widgets/ui/adoption/adoption_card.dart';
+import 'package:petlyfe_mobile/widgets/ui/custom_appbar.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_button.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_checkbox.dart';
 import '../controllers/adoption_controller.dart';
@@ -14,24 +15,21 @@ class AdoptionView extends GetView<AdoptionController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
+      appBar: CustomAppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset('assets/icons/svg/your pet.svg', height: 24),
             const SizedBox(width: 10),
-            const Text('Adopsi Peliharaan',
-                style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold)),
+            Text("Adopsi Peliharaan",
+                style:
+                    const TextStyle(fontSize: 21, fontWeight: FontWeight.bold)),
           ],
         ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: SvgPicture.asset('assets/icons/svg/edit.svg', height: 24),
-            onPressed: () {},
-          ),
-        ],
+        actionIcon: 'assets/icons/svg/edit.svg',
+        onActionPressed: () {
+          Get.toNamed(Routes.ADOPTION_HISTORY);
+        },
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: Padding(

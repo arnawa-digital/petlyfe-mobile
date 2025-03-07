@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class ButtonBack extends StatelessWidget {
@@ -15,9 +16,11 @@ class ButtonBack extends StatelessWidget {
       child: InkWell(
         onTap: onBackPressed ?? () => Get.back(),
         borderRadius: BorderRadius.circular(50),
-        child: const Padding(
-          padding: EdgeInsets.all(8), // Padding agar lebih besar
-          child: Icon(Icons.arrow_back, color: Colors.black), // Icon back
+        child: Padding(
+          padding: EdgeInsets.all(10), // Padding agar lebih besar
+          child: SvgPicture.asset(
+            'assets/icons/svg/arrow.svg',
+          ), // Icon back
         ),
       ),
     );
