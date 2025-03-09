@@ -70,6 +70,7 @@ class CustomStepper extends StatelessWidget {
                     child: Text(
                       subTitle,
                       style: TextStyle(
+                        fontSize: 10,
                         color: status
                             ? Colors.grey
                             : Colors.grey
@@ -91,8 +92,6 @@ class CustomStepper extends StatelessWidget {
               color: status
                   ? Colors.blue
                   : Colors.grey, // Ubah warna sesuai status
-              decoration:
-                  status ? TextDecoration.underline : TextDecoration.none,
             ),
           ),
         ),

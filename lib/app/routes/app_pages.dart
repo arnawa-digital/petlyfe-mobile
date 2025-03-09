@@ -13,12 +13,16 @@ import '../modules/auth/register/views/register_view.dart';
 import '../modules/care/adoption/adoption_detail/bindings/adoption_detail_binding.dart';
 import '../modules/care/adoption/adoption_detail/views/adoption_detail_view.dart';
 import '../modules/care/adoption/adoption_history/bindings/adoption_history_binding.dart';
+import '../modules/care/adoption/adoption_history/progress_adoption/bindings/progress_adoption_binding.dart';
+import '../modules/care/adoption/adoption_history/progress_adoption/views/progress_adoption_view.dart';
 import '../modules/care/adoption/adoption_history/views/adoption_history_view.dart';
 import '../modules/care/adoption/bindings/adoption_binding.dart';
 import '../modules/care/adoption/views/adoption_view.dart';
 import '../modules/care/donation/bindings/donation_binding.dart';
 import '../modules/care/donation/views/donation_view.dart';
 import '../modules/care/views/care_view.dart';
+import '../modules/care/adoption/create_adoption/bindings/create_adoption_binding.dart';
+import '../modules/care/adoption/create_adoption/views/create_adoption_view.dart';
 import '../modules/dashboard/doctor_clinic/bindings/doctor_clinic_binding.dart';
 import '../modules/dashboard/doctor_clinic/views/doctor_clinic_view.dart';
 import '../modules/dashboard/news_insights/bindings/news_insights_binding.dart';
@@ -34,8 +38,6 @@ import '../modules/landing/views/landing_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
 import '../modules/pet_profile/views/pet_profile_view.dart';
-import '../modules/care/adoption/adoption_history/progress_adoption/bindings/progress_adoption_binding.dart';
-import '../modules/care/adoption/adoption_history/progress_adoption/views/progress_adoption_view.dart';
 import '../modules/user_profile/views/user_profile_view.dart';
 
 part 'app_routes.dart';
@@ -145,6 +147,11 @@ class AppPages {
       name: _Paths.PROGRESS_ADOPTION,
       page: () => const ProgressAdoptionView(),
       binding: ProgressAdoptionBinding(),
+    ),
+    GetPage(
+      name: _Paths.CREATE_ADOPTION,
+      page: () => const CreateAdoptionView(),
+      binding: CreateAdoptionBinding(),
     ),
   ];
 }

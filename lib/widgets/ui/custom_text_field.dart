@@ -2,26 +2,30 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
-  final String label;
+  final String? label;
   final String hintText;
-  final Widget prefixIcon;
+  final Widget? prefixIcon;
   final bool isPassword;
   final bool? obscureText;
   final String? Function(String?)? validator;
   final void Function()? onPressed;
   final bool isNumeric;
+  final int minLines;
+  final int? maxLines;
 
   const CustomTextField({
     super.key,
     required this.controller,
-    required this.label,
+    this.label, // Label sekarang opsional
     required this.hintText,
-    required this.prefixIcon,
+    this.prefixIcon,
     this.isPassword = false,
     this.validator,
     this.obscureText = true,
     this.onPressed,
     this.isNumeric = false,
+    this.minLines = 1,
+    this.maxLines, // Jika null, akan menyesuaikan isi teks
   });
 
   @override
@@ -29,18 +33,23 @@ class CustomTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.bold,
+        if (label != null) ...[
+          Text(
+            label!,
+            style: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        const SizedBox(height: 8),
+          const SizedBox(height: 8),
+        ],
         TextFormField(
           controller: controller,
           autovalidateMode: AutovalidateMode.onUserInteraction,
-          keyboardType: isNumeric ? TextInputType.number : TextInputType.text,
+          keyboardType:
+              isNumeric ? TextInputType.number : TextInputType.multiline,
+          minLines: minLines,
+          maxLines: maxLines,
           decoration: InputDecoration(
             prefixIcon: prefixIcon,
             suffixIcon: isPassword

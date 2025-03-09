@@ -276,7 +276,9 @@ class AdoptionView extends GetView<AdoptionController> {
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
         backgroundColor: Colors.blue,
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(Routes.CREATE_ADOPTION);
+        },
         child: const Icon(Icons.add, color: Colors.white),
       ),
       bottomNavigationBar: Padding(
