@@ -52,7 +52,9 @@ class HistoryView extends StatelessWidget {
             SizedBox(width: 16),
             Expanded(
               child: CustomButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(Routes.PROGRESS_ADOPTION);
+                  },
                   backgroundColor: Colors.grey,
                   child: Text("Lihat Progress",
                       style: TextStyle(

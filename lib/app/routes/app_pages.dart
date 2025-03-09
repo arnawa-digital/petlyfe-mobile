@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 
-import '../modules/care/adoption/adoption_history/bindings/adoption_history_binding.dart';
-import '../modules/care/adoption/adoption_history/views/adoption_history_view.dart';
 import '../modules/auth/forgot_password/forgot_password_email/bindings/forgot_password_email_binding.dart';
 import '../modules/auth/forgot_password/forgot_password_email/views/forgot_password_email_view.dart';
 import '../modules/auth/forgot_password/forgot_password_otp/bindings/forgot_password_otp_binding.dart';
@@ -14,6 +12,8 @@ import '../modules/auth/register/bindings/register_binding.dart';
 import '../modules/auth/register/views/register_view.dart';
 import '../modules/care/adoption/adoption_detail/bindings/adoption_detail_binding.dart';
 import '../modules/care/adoption/adoption_detail/views/adoption_detail_view.dart';
+import '../modules/care/adoption/adoption_history/bindings/adoption_history_binding.dart';
+import '../modules/care/adoption/adoption_history/views/adoption_history_view.dart';
 import '../modules/care/adoption/bindings/adoption_binding.dart';
 import '../modules/care/adoption/views/adoption_view.dart';
 import '../modules/care/donation/bindings/donation_binding.dart';
@@ -34,6 +34,8 @@ import '../modules/landing/views/landing_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
 import '../modules/pet_profile/views/pet_profile_view.dart';
+import '../modules/care/adoption/adoption_history/progress_adoption/bindings/progress_adoption_binding.dart';
+import '../modules/care/adoption/adoption_history/progress_adoption/views/progress_adoption_view.dart';
 import '../modules/user_profile/views/user_profile_view.dart';
 
 part 'app_routes.dart';
@@ -138,6 +140,11 @@ class AppPages {
       name: _Paths.ADOPTION_HISTORY,
       page: () => const AdoptionHistoryView(),
       binding: AdoptionHistoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROGRESS_ADOPTION,
+      page: () => const ProgressAdoptionView(),
+      binding: ProgressAdoptionBinding(),
     ),
   ];
 }
