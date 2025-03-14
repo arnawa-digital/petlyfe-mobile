@@ -28,6 +28,7 @@ abstract class Routes {
   static const ADOPTION_HISTORY = _Paths.ADOPTION_HISTORY;
   static const PROGRESS_ADOPTION = _Paths.PROGRESS_ADOPTION;
   static const CREATE_ADOPTION = _Paths.CREATE_ADOPTION;
+  static const ADOPTION_OFFER = _Paths.ADOPTION_OFFER;
 }
 
 abstract class _Paths {
@@ -56,4 +57,5 @@ abstract class _Paths {
   static const ADOPTION_HISTORY = '/adoption-history';
   static const PROGRESS_ADOPTION = '/progress-adoption';
   static const CREATE_ADOPTION = '/create-adoption';
+  static const ADOPTION_OFFER = '/adoption-offer';
 }

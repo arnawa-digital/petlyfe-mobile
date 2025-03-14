@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
+import 'package:petlyfe_mobile/app/routes/app_pages.dart';
 import 'package:petlyfe_mobile/widgets/ui/adoption/custom_stepper.dart';
 import 'package:petlyfe_mobile/widgets/ui/custom_appbar.dart';
 
@@ -18,7 +19,7 @@ class ProgressAdoptionView extends GetView<ProgressAdoptionController> {
           children: [
             SvgPicture.asset('assets/icons/svg/your pet.svg', height: 24),
             const SizedBox(width: 10),
-            Text("Riwayat Adopsi",
+            Text("Detail Progres",
                 style:
                     const TextStyle(fontSize: 21, fontWeight: FontWeight.bold)),
           ],
@@ -41,9 +42,9 @@ class ProgressAdoptionView extends GetView<ProgressAdoptionController> {
               isLastStep: false,
               title: "Tawaran Adopsi",
               subTitle: "Diperbarui pada 7 Maret 2025 - Jam 12.10",
-              status: false,
+              status: true,
               onTap: () {
-                print("Lihat Detail");
+                Get.toNamed(Routes.ADOPTION_OFFER);
               },
             ),
             CustomStepper(

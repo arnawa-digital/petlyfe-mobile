@@ -44,6 +44,7 @@ class LoginView extends GetView<LoginController> {
                     prefixIcon: Icon(Icons.email),
                     onPressed: controller.showPassword,
                     validator: AuthValidator.password,
+                    maxLines: 1,
                   ),
                 ),
                 Row(

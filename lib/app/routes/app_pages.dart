@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/care/adoption/adoption_history/progress_adoption/adoption_offer/bindings/adoption_offer_binding.dart';
+import '../modules/care/adoption/adoption_history/progress_adoption/adoption_offer/views/adoption_offer_view.dart';
 import '../modules/auth/forgot_password/forgot_password_email/bindings/forgot_password_email_binding.dart';
 import '../modules/auth/forgot_password/forgot_password_email/views/forgot_password_email_view.dart';
 import '../modules/auth/forgot_password/forgot_password_otp/bindings/forgot_password_otp_binding.dart';
@@ -17,12 +19,12 @@ import '../modules/care/adoption/adoption_history/progress_adoption/bindings/pro
 import '../modules/care/adoption/adoption_history/progress_adoption/views/progress_adoption_view.dart';
 import '../modules/care/adoption/adoption_history/views/adoption_history_view.dart';
 import '../modules/care/adoption/bindings/adoption_binding.dart';
+import '../modules/care/adoption/create_adoption/bindings/create_adoption_binding.dart';
+import '../modules/care/adoption/create_adoption/views/create_adoption_view.dart';
 import '../modules/care/adoption/views/adoption_view.dart';
 import '../modules/care/donation/bindings/donation_binding.dart';
 import '../modules/care/donation/views/donation_view.dart';
 import '../modules/care/views/care_view.dart';
-import '../modules/care/adoption/create_adoption/bindings/create_adoption_binding.dart';
-import '../modules/care/adoption/create_adoption/views/create_adoption_view.dart';
 import '../modules/dashboard/doctor_clinic/bindings/doctor_clinic_binding.dart';
 import '../modules/dashboard/doctor_clinic/views/doctor_clinic_view.dart';
 import '../modules/dashboard/news_insights/bindings/news_insights_binding.dart';
@@ -152,6 +154,11 @@ class AppPages {
       name: _Paths.CREATE_ADOPTION,
       page: () => const CreateAdoptionView(),
       binding: CreateAdoptionBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADOPTION_OFFER,
+      page: () => const AdoptionOfferView(),
+      binding: AdoptionOfferBinding(),
     ),
   ];
 }
